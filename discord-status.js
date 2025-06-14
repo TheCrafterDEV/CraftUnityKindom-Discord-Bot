@@ -27,10 +27,8 @@ module.exports = (client) => {
     
     await updateTicketCount();
 
-    // Alle 5s Ticketanzahl aktualisieren
     setInterval(updateTicketCount, 5000);
 
-    // Alle 15s den Bot-Status wechseln
     setInterval(() => {
       const status = statuses[i % statuses.length]();
       client.user.setActivity(status.name, {
