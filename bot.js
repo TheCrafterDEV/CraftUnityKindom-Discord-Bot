@@ -13,7 +13,7 @@ client.commands = new Collection();
 const commands = [];
 
 async function loadCommands() {
-    const commandFiles = await readdir(path.join(__dirname, 'craftommands'));
+    const commandFiles = await readdir(path.join(__dirname, 'commands'));
 
     for (const file of commandFiles) {
         if (!file.endsWith('.js')) continue;
