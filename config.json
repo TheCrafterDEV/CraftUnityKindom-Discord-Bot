@@ -1,0 +1,7 @@
+{
+  "token": "BOT_TOKEN",
+  "clientId": "clientId",
+  "guildId": "guildId",
+  "mcServer": "your.domain.de",
+  "mcPort": 25565
+}
