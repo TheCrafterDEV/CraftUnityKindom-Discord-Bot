@@ -1,24 +1,24 @@
-# CraftUnityKindom-Discord-Bot
+# CraftUnityKingdom Bot
 
-Meet the official system bot of **CraftUnityKindom** – a vibrant Minecraft and Discord community built around adventure, teamwork, and exciting events.
+Meet the official system bot of **CraftUnityKingdom** – a growing Minecraft and Discord community centered around adventure, teamwork, and immersive events.
 
-This bot streamlines and automates key administrative tasks across the server, including ticket management, giveaways, role handling, and various moderation tools that help keep our community safe, organized, and user-friendly.
+This bot streamlines and automates essential administrative tasks on the server, including ticket management, giveaways, role assignments, and various moderation tools – helping to keep our community secure, organized, and easy to manage.
 
 ## 🔐 Advanced Security System
 
-Developed entirely by **TheCrafter\_DEV**, the security system defends the server in real time against raids, bots, and other harmful behavior. It can automatically mute, kick, or ban suspicious users, and provides admins with detailed logs and flexible protection settings for full control and transparency.
+Fully developed by **TheCrafter\_DEV**, the bot’s security system actively protects the server against raids, spam bots, and other harmful behavior in real time. It can automatically mute, kick, or ban suspicious users and offers detailed logs and flexible settings for server admins to stay in full control.
 
-## ⚠️ Legal Information
+## ⚠️ Legal Notice
 
-This bot was fully developed by **TheCrafter\_DEV** and is **protected by copyright law**. Any form of copying, redistribution, or publication – even in part – is **strictly prohibited** without prior written consent.
+This bot was fully developed by **TheCrafter\_DEV** and is **protected under copyright law**. Any reproduction, redistribution, or publication – even partially – is **strictly forbidden** without prior written permission.
 
-## 📌 Main Features
+## 📌 Key Features
 
-* ✅ Ticket system with automatic transcript generation
+* ✅ Ticket system with transcript generation
 * 🎉 Reaction-based giveaway system
-* 👮‍♂️ Automated moderation & intelligent security checks
-* 🔧 Easy-to-use slash commands and button controls
-* 📑 Transparent logging of server actions
-* 🛠️ Fully configurable within Discord
+* 👮‍♂️ Automated moderation & intelligent security detection
+* 🔧 Intuitive slash commands and button controls
+* 📑 Transparent logging of actions and events
+* 🛠️ Fully configurable directly through Discord
 
-Crafted with ❤️ by TheCrafterDEV
+Made with ❤️ by TheCrafterDEV
