@@ -14,7 +14,6 @@ if (!fs.existsSync(configPath)) {
 }
 const { token, clientId, guildId } = require(configPath);
 
-// Bot Client
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -22,7 +21,7 @@ const client = new Client({
     GatewayIntentBits.GuildMessages,
     GatewayIntentBits.GuildMessageReactions,
     GatewayIntentBits.GuildVoiceStates,
-    GatewayIntentBits.GuildPresences, // Wichtig für stafflist-Status
+    GatewayIntentBits.GuildPresences,
     GatewayIntentBits.MessageContent
   ],
   partials: [Partials.GuildMember, Partials.Message, Partials.Channel, Partials.Reaction]
@@ -30,7 +29,6 @@ const client = new Client({
 
 client.commands = new Collection();
 
-// Slash-Commands laden
 const commands = [];
 const commandsPath = path.join(__dirname, "commands");
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith(".js"));
@@ -44,7 +42,6 @@ for (const file of commandFiles) {
   }
 }
 
-// Events laden
 const eventsPath = path.join(__dirname, "events");
 if (fs.existsSync(eventsPath)) {
   const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith(".js"));
@@ -59,7 +56,6 @@ if (fs.existsSync(eventsPath)) {
   }
 }
 
-// Slash-Commands automatisch registrieren
 const rest = new REST({ version: "10" }).setToken(token);
 (async () => {
   try {
@@ -71,7 +67,6 @@ const rest = new REST({ version: "10" }).setToken(token);
   }
 })();
 
-// Slash-Command-Handler
 client.on("interactionCreate", async interaction => {
   if (interaction.isChatInputCommand()) {
     const command = client.commands.get(interaction.commandName);
@@ -125,7 +120,6 @@ client.on("interactionCreate", async interaction => {
   }
 });
 
-// Welcome-Event (optional)
 try {
   const welcomeCommand = require("./commands/welcome.js");
   client.on("guildMemberAdd", member => welcomeCommand.execute(member));
@@ -133,9 +127,8 @@ try {
   console.log("ℹ️ Kein welcome.js vorhanden oder Fehler beim Laden.");
 }
 
-// Bot bereit
 client.once("ready", () => {
-  console.log(`🤖 Bot eingeloggt als ${client.user.tag}`);
+  console.log(`Bot eingeloggt als ${client.user.tag}`);
 });
 
 client.login(token);
