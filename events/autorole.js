@@ -5,9 +5,9 @@ module.exports = {
   name: Events.GuildMemberAdd,
   async execute(member) {
     const roleIds = [
-      'Deine Rollen ID',
-      'Deine Rollen ID', 
-      'Deine Rollen ID'
+      'Rollen ID',
+      'Rollen ID', 
+      'Rollen ID'
     ];
 
     const rolesToAdd = roleIds
