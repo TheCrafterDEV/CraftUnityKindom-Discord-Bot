@@ -1,0 +1,43 @@
+# 📦 Modern GitHub Pages Deployment Workflow
+name: Deploy static content to GitHub Pages
+
+on:
+  push:
+    branches: [main] # Trigger only on push to default branch
+  workflow_dispatch:  # Manual trigger option
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "github-pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+
+    steps:
+      - name: 📥 Checkout source
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      # Optional: Add build step here (e.g. npm run build or hugo)
+      # - name: Build static site
+      #   run: your-build-command
+
+      - name: 📤 Upload static files
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './build'  # Adjust this to your actual output folder (e.g. '.', 'dist', 'public', etc.)
+
+      - name: 🚀 Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
